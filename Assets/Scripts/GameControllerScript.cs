@@ -19,4 +19,6 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 }
+
 // PlugCount = GameController.GetComponent<GameControllerScript>().PlugCount;
+
