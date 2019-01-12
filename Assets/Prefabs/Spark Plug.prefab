@@ -68,6 +68,9 @@ MonoBehaviour:
   requiredDistance: 0.25
   snapTag: Socket
   useTags: 1
+  damperValue: 500
+  attachpoint: {x: 0, y: 0, z: 0}
+  anchorPoint: {x: 0, y: 0, z: 0}
   lockXRotation: 0
   lockYRotation: 0
   lockZRotation: 0
@@ -78,6 +81,7 @@ MonoBehaviour:
   lockAllAxis: 0
   lockAll: 0
   copyTransform: 1
+  autoConfigconnectedAnchor: 0
 --- !u!1 &755241594
 GameObject:
   m_ObjectHideFlags: 0

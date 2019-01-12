@@ -14,7 +14,15 @@ public class NewSnapper : MonoBehaviour
     private Rigidbody selfRB;
     private bool connected;
     private GameObject[] gos;
+    private SpringJoint SJ;
+    public int damperValue = 10;
+    private int sentSignal = 0;
 
+    public Vector3 attachpoint;
+    public Vector3 anchorPoint;
+
+    public bool sendSignal = false;
+    public bool autoConfigconnectedAnchor;
     public bool lockXRotation;
     public bool lockYRotation;
     public bool lockZRotation;
@@ -33,9 +41,17 @@ public class NewSnapper : MonoBehaviour
                 gameObject.transform.rotation = targetTransform.rotation;
             }
             gameObject.AddComponent<SpringJoint>();
-            gameObject.GetComponent<SpringJoint>().connectedBody = targetRB;
-            gameObject.GetComponent<SpringJoint>().spring = 1000;
-            gameObject.GetComponent<SpringJoint>().tolerance = 0;
+            SJ = gameObject.GetComponent<SpringJoint>();
+            SJ.connectedBody = targetRB;
+            SJ.spring = 1000;
+            SJ.tolerance = 0;
+            SJ.damper = damperValue;
+            SJ.anchor = attachpoint;
+            if (autoConfigconnectedAnchor == true){
+                SJ.autoConfigureConnectedAnchor = false;
+                SJ.connectedAnchor = anchorPoint;
+            }
+
             connected = true;
             if (lockXRotation == true){
                 selfRB.constraints = RigidbodyConstraints.FreezeRotationX;
@@ -64,12 +80,17 @@ public class NewSnapper : MonoBehaviour
             if (lockAll == true){
                 selfRB.constraints = RigidbodyConstraints.FreezeAll;
             }
-
+            if (sendSignal == true){
+                sentSignal = 1;
+            }
         } 
         else if(Vector3.Distance(self.position, targetTransform.position) > requiredDistance){
             Destroy(gameObject.GetComponent<SpringJoint>());
             selfRB.constraints = RigidbodyConstraints.None;
             connected = false;
+            if (sendSignal == true){
+                sentSignal = 0;
+            }
         }
     }
 
@@ -106,7 +127,7 @@ public class NewSnapper : MonoBehaviour
         // Here ends the snippet
 
         if(useTags == true) {
-            Debug.Log(closest);
+            // Debug.Log(closest);
             targetTransform = closest.GetComponent<Transform>();
             targetRB = closest.GetComponent<Rigidbody>();
             startSnapping();
