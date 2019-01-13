@@ -12,6 +12,7 @@ public class GameControllerScript : MonoBehaviour
     public GameObject Plug2;
     public GameObject Plug3;
     public GameObject[] Pipes;
+    public GameObject waterPipe;
 
     void Start() {
         Pipes = GameObject.FindGameObjectsWithTag("Pipe");
@@ -35,6 +36,10 @@ public class GameControllerScript : MonoBehaviour
         }
         if (ctr == 27) {
             Debug.Log("Yippie!");
+        }
+
+        if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){
+            Debug.Log("Yippey too!");
         }
     }
 }
