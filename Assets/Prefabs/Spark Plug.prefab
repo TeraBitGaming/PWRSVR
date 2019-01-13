@@ -71,6 +71,8 @@ MonoBehaviour:
   damperValue: 500
   attachpoint: {x: 0, y: 0, z: 0}
   anchorPoint: {x: 0, y: 0, z: 0}
+  sendSignal: 0
+  autoConfigconnectedAnchor: 0
   lockXRotation: 0
   lockYRotation: 0
   lockZRotation: 0
@@ -81,7 +83,6 @@ MonoBehaviour:
   lockAllAxis: 0
   lockAll: 0
   copyTransform: 1
-  autoConfigconnectedAnchor: 0
 --- !u!1 &755241594
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ MonoBehaviour:
   itemId: 
   canBeHeld: 1
   interactionDisabled: 0
-  holdType: 1
+  holdType: 0
   useBreakDistance: 0
   breakDistance: 0.1
   linkedLeftAndRightHeldPositions: 1

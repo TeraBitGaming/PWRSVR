@@ -1,32 +1,85 @@
 fileFormatVersion: 2
-guid: 858ee2728c6326e46942989e9826bd78
+guid: 78eb77d30f1310149bc382d9e1301e71
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box001
-    100004: Box002
-    400000: //RootNode
-    400002: Box001
-    400004: Box002
-    2100000: 'Material #135'
-    2100002: 'Material #123'
-    2100004: 'Material #124'
-    2100006: 'Material #172'
-    2100008: No Name
-    2100010: 'Material #125'
-    2100012: 'Material #128'
-    2100014: 'Material #127'
-    2100016: 'Material #129'
-    2100018: 'Material #126'
-    2300000: Box001
-    2300002: Box002
-    2300004: //RootNode
-    3300000: Box001
-    3300002: Box002
-    3300004: //RootNode
+    100000: Barrel
+    100002: Barrel001
+    100004: Barrel002
+    100006: Barrel003
+    100008: Barrel004
+    100010: Barrel005
+    100012: Barrel006
+    100014: Barrel007
+    100016: Box001
+    100018: Box002
+    100020: Box003
+    100022: Box004
+    100024: Sphere001
+    100026: //RootNode
+    400000: Barrel
+    400002: Barrel001
+    400004: Barrel002
+    400006: Barrel003
+    400008: Barrel004
+    400010: Barrel005
+    400012: Barrel006
+    400014: Barrel007
+    400016: Box001
+    400018: Box002
+    400020: Box003
+    400022: Box004
+    400024: Sphere001
+    400026: //RootNode
+    2100000: No Name
+    2100002: 'Material #173'
+    2100004: 'Material #185'
+    2100006: 'Material #362'
+    2100008: 'Material #139'
+    2100010: 'Material #116'
+    2100012: 'Material #38'
+    2100014: 'Material #39'
+    2300000: Barrel
+    2300002: Barrel001
+    2300004: Barrel002
+    2300006: Barrel003
+    2300008: Barrel004
+    2300010: Barrel005
+    2300012: Barrel006
+    2300014: Barrel007
+    2300016: Box001
+    2300018: Box002
+    2300020: Box003
+    2300022: Box004
+    2300024: Sphere001
+    3300000: Barrel
+    3300002: Barrel001
+    3300004: Barrel002
+    3300006: Barrel003
+    3300008: Barrel004
+    3300010: Barrel005
+    3300012: Barrel006
+    3300014: Barrel007
+    3300016: Box001
+    3300018: Box002
+    3300020: Box003
+    3300022: Box004
+    3300024: Sphere001
     4300000: Box001
     4300002: Box002
+    4300004: Box003
+    4300006: Box004
+    4300008: Sphere001
+    4300010: Barrel
+    4300012: Barrel001
+    4300014: Barrel002
+    4300016: Barrel003
+    4300018: Barrel004
+    4300020: Barrel005
+    4300022: Barrel006
+    4300024: Barrel007
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -79,8 +132,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -107,7 +160,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

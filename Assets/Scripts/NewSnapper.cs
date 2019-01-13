@@ -16,7 +16,7 @@ public class NewSnapper : MonoBehaviour
     private GameObject[] gos;
     private SpringJoint SJ;
     public int damperValue = 10;
-    private int sentSignal = 0;
+    public int sentSignal = 0;
 
     public Vector3 attachpoint;
     public Vector3 anchorPoint;
@@ -34,12 +34,27 @@ public class NewSnapper : MonoBehaviour
     public bool lockAll;
     public bool copyTransform;
 
+    
+    // Start is called before the first frame update
+    void Start(){
+        self = gameObject.GetComponent<Transform>();
+        selfRB = gameObject.GetComponent<Rigidbody>();
+        targetTransform = target.GetComponent<Transform>();
+        targetRB = target.GetComponent<Rigidbody>();
+        gos = GameObject.FindGameObjectsWithTag(snapTag);
+    }
+
+    public int getSentSignal(){
+        return sentSignal;
+    }
+
     private void startSnapping(){
         if (Vector3.Distance(self.position, targetTransform.position) < requiredDistance && connected == false){
             if(copyTransform == true){
                 gameObject.transform.position = targetTransform.position;
                 gameObject.transform.rotation = targetTransform.rotation;
             }
+
             gameObject.AddComponent<SpringJoint>();
             SJ = gameObject.GetComponent<SpringJoint>();
             SJ.connectedBody = targetRB;
@@ -47,6 +62,7 @@ public class NewSnapper : MonoBehaviour
             SJ.tolerance = 0;
             SJ.damper = damperValue;
             SJ.anchor = attachpoint;
+
             if (autoConfigconnectedAnchor == true){
                 SJ.autoConfigureConnectedAnchor = false;
                 SJ.connectedAnchor = anchorPoint;
@@ -80,10 +96,17 @@ public class NewSnapper : MonoBehaviour
             if (lockAll == true){
                 selfRB.constraints = RigidbodyConstraints.FreezeAll;
             }
+
             if (sendSignal == true){
-                sentSignal = 1;
+                if (target.GetComponent<SupplementalSnappy>().Signal == true){
+                    sentSignal = 1;
+                } else if (target.GetComponent<SupplementalSnappy>().Signal == false){
+                    sentSignal = 0;
+                }                 
             }
+            
         } 
+
         else if(Vector3.Distance(self.position, targetTransform.position) > requiredDistance){
             Destroy(gameObject.GetComponent<SpringJoint>());
             selfRB.constraints = RigidbodyConstraints.None;
@@ -92,16 +115,6 @@ public class NewSnapper : MonoBehaviour
                 sentSignal = 0;
             }
         }
-    }
-
-    
-    // Start is called before the first frame update
-    void Start(){
-        self = gameObject.GetComponent<Transform>();
-        selfRB = gameObject.GetComponent<Rigidbody>();
-        targetTransform = target.GetComponent<Transform>();
-        targetRB = target.GetComponent<Rigidbody>();
-        gos = GameObject.FindGameObjectsWithTag(snapTag);
     }
 
     // Update is called once per frame
@@ -130,6 +143,7 @@ public class NewSnapper : MonoBehaviour
             // Debug.Log(closest);
             targetTransform = closest.GetComponent<Transform>();
             targetRB = closest.GetComponent<Rigidbody>();
+            target = closest;
             startSnapping();
         } else if (useTags == false) {
             startSnapping();

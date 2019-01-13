@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 745556826}
   hovers:
-  - {fileID: 0}
+  - {fileID: 745556830}
   triggerColliders: []
   leftHandIKAnchor: {fileID: 0}
   rightHandIKAnchor: {fileID: 0}
@@ -307,8 +307,11 @@ MonoBehaviour:
   snapTag: PipeSnap1
   useTags: 1
   damperValue: 100
+  sentSignal: 0
   attachpoint: {x: 0, y: 0, z: 0}
   anchorPoint: {x: 0, y: 0, z: 0}
+  sendSignal: 0
+  autoConfigconnectedAnchor: 1
   lockXRotation: 0
   lockYRotation: 0
   lockZRotation: 0
@@ -319,7 +322,6 @@ MonoBehaviour:
   lockAllAxis: 0
   lockAll: 0
   copyTransform: 0
-  autoConfigconnectedAnchor: 1
 --- !u!1 &895122881
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895122882}
   - component: {fileID: 895122883}
+  - component: {fileID: 8431404914989981045}
   m_Layer: 0
   m_Name: SnapPoint Top
   m_TagString: PipeSnap1
@@ -367,6 +370,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8431404914989981045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895122881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22c8f3a05ae20a47bc4ae33f7d69d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Signal: 0
 --- !u!1 &1777747934
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1777747935
 Transform:
   m_ObjectHideFlags: 0
@@ -411,6 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833389657}
   - component: {fileID: 1833389656}
+  - component: {fileID: 563161535140087735}
   m_Layer: 0
   m_Name: SnapPoint Bot
   m_TagString: PipeSnap1
@@ -448,6 +465,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &563161535140087735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833389655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22c8f3a05ae20a47bc4ae33f7d69d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Signal: 0
 --- !u!1 &1959526528
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959526529}
   - component: {fileID: 1959526530}
+  - component: {fileID: 5955225036059493578}
   m_Layer: 0
   m_Name: SnapPoint Left
   m_TagString: PipeSnap1
@@ -495,6 +526,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5955225036059493578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959526528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22c8f3a05ae20a47bc4ae33f7d69d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Signal: 0
 --- !u!1 &1966193151
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130943091}
   - component: {fileID: 2130943092}
+  - component: {fileID: 8563887474439866239}
   m_Layer: 0
   m_Name: SnapPoint Right
   m_TagString: PipeSnap1
@@ -633,3 +678,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8563887474439866239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130943090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22c8f3a05ae20a47bc4ae33f7d69d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Signal: 0
