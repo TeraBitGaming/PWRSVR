@@ -8,6 +8,7 @@ TagManager:
   - PipeSnap1
   - Light
   - Pipe
+  - Water
   layers:
   - Default
   - TransparentFX
