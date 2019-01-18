@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Pipe
   - Water
+  - Kettle
   layers:
   - Default
   - TransparentFX
