@@ -78,6 +78,19 @@ ModelImporter:
     4300020: Barrel005
     4300022: Barrel006
     4300024: Barrel007
+    6400000: Barrel
+    6400002: Barrel001
+    6400004: Barrel002
+    6400006: Barrel003
+    6400008: Barrel004
+    6400010: Barrel005
+    6400012: Barrel006
+    6400014: Barrel007
+    6400016: Box001
+    6400018: Box002
+    6400020: Box003
+    6400022: Box004
+    6400024: Sphere001
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -113,7 +126,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

@@ -8,20 +8,22 @@ public class GameControllerScript : MonoBehaviour
 
     public GameObject light1;
     public GameObject light2;
-    public GameObject Plug1;
+    public GameObject plug1;
     public GameObject Plug2;
     public GameObject Plug3;
-    public GameObject[] Pipes;
+    public GameObject[] pipes;
     public GameObject waterPipe;
+    private GameObject kettle;
 
     void Start() {
-        Pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        kettle = GameObject.FindGameObjectWithTag("Kettle");
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlugCount = Plug1.GetComponent<NewSnapper>().getSentSignal() + Plug2.GetComponent<NewSnapper>().getSentSignal() + Plug3.GetComponent<NewSnapper>().getSentSignal();
+        PlugCount = plug1.GetComponent<NewSnapper>().getSentSignal() + Plug2.GetComponent<NewSnapper>().getSentSignal() + Plug3.GetComponent<NewSnapper>().getSentSignal();
         if (PlugCount == 3){
             light1.GetComponent<Light>().enabled = true;
             light2.GetComponent<Light>().enabled = true;
@@ -31,15 +33,21 @@ public class GameControllerScript : MonoBehaviour
         }
 
         int ctr = 0;
-        foreach (GameObject pipe in Pipes) {
+        foreach (GameObject pipe in pipes) {
             ctr += pipe.GetComponent<NewSnapper>().getSentSignal();
         }
         if (ctr == 27) {
-            Debug.Log("Yippie!");
+            Debug.Log("Pipes work!");
+            kettle.GetComponent<WaterJugScript>().hot = true;
+        } else {
+            kettle.GetComponent<WaterJugScript>().hot = false;
         }
 
         if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){
-            Debug.Log("Yippey too!");
+            kettle.GetComponent<WaterJugScript>().full = true;
+            Debug.Log("Water-pipe works too!");
+        } else {
+            kettle.GetComponent<WaterJugScript>().full = false;
         }
     }
 }
