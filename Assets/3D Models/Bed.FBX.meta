@@ -14,12 +14,20 @@ ModelImporter:
     2100004: 'Material #124'
     2100006: 'Material #172'
     2100008: No Name
+    2100010: 'Material #125'
+    2100012: 'Material #128'
+    2100014: 'Material #127'
+    2100016: 'Material #129'
+    2100018: 'Material #126'
     2300000: Box001
     2300002: Box002
+    2300004: //RootNode
     3300000: Box001
     3300002: Box002
+    3300004: //RootNode
     4300000: Box001
     4300002: Box002
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -53,7 +61,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

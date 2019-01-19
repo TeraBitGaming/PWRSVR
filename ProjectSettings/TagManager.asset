@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Socket
+  - PipeSnap1
+  - Light
+  - Pipe
+  - Water
+  - Kettle
   layers:
   - Default
   - TransparentFX

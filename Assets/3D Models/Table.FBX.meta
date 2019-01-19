@@ -32,6 +32,11 @@ ModelImporter:
     4300004: Table Leg2
     4300006: Table Leg3
     4300008: Table Leg4
+    6400000: Table Leg
+    6400002: Table Leg2
+    6400004: Table Leg3
+    6400006: Table Leg4
+    6400008: Table Top
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -65,7 +70,8 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -90,6 +96,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
