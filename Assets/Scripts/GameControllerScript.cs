@@ -15,6 +15,8 @@ public class GameControllerScript : MonoBehaviour
     public GameObject waterPipe;
     private GameObject kettle;
 
+    public int energyDrained = 0;
+
     void Start() {
         pipes = GameObject.FindGameObjectsWithTag("Pipe");
         kettle = GameObject.FindGameObjectWithTag("Kettle");
@@ -27,6 +29,7 @@ public class GameControllerScript : MonoBehaviour
         if (PlugCount == 3){
             light1.GetComponent<Light>().enabled = true;
             light2.GetComponent<Light>().enabled = true;
+            energyDrained += 2;
         } else if (PlugCount < 3){
             light1.GetComponent<Light>().enabled = false;
             light2.GetComponent<Light>().enabled = false;
@@ -38,9 +41,9 @@ public class GameControllerScript : MonoBehaviour
         }
         if (ctr == 27) {
             Debug.Log("Pipes work!");
-            kettle.GetComponent<WaterJugScript>().hot = true;
+            kettle.GetComponent<WaterJugScript>().heating = true;
         } else {
-            kettle.GetComponent<WaterJugScript>().hot = false;
+            kettle.GetComponent<WaterJugScript>().heating = false;
         }
 
         if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){

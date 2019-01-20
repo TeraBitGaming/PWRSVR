@@ -10,6 +10,8 @@ TagManager:
   - Pipe
   - Water
   - Kettle
+  - Steam
+  - Key
   layers:
   - Default
   - TransparentFX
