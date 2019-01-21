@@ -12,6 +12,8 @@ TagManager:
   - Kettle
   - Steam
   - Key
+  - Sphere
+  - Stove
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ExampleScnee.unity
     guid: 5c98dfa3b16ee0a4997f732316e6d9df
   - enabled: 1
+    path: Assets/Scenes/FinalScreenScene.unity
+    guid: c0f0979edef0125498264de260be1780
+  - enabled: 0
     path: Assets/VRInteraction/InteractionExampleScene.unity
     guid: b4b5c7fbb983a0140b96a665fb528090
   m_configObjects: {}
