@@ -14,8 +14,10 @@ public class WaterJugScript : MonoBehaviour
     public bool heating;
     private int heat;
     public bool full;
+    private bool filled;
     public bool pouring;
     public GameObject steam;
+    public GameObject stove;
 
     public bool getPouring() {
         return pouring;
@@ -29,15 +31,19 @@ public class WaterJugScript : MonoBehaviour
         if (heating == true) {
             heat += 1;
         }
+        
         if (heat == 100) {
             Debug.Log("DING!");
             hot = true;
             steam.SetActive(true);
+            steam.GetComponent<ParticleSystem>().Play();
         }
 
+        if (stove.GetComponent<PourChecker>().isFull == true && full == true) {
+            filled = true;
+        }
 
-
-        if (hot == true && full == true){
+        if (hot == true && filled == true){
             if (45 < xRot && rotation > 0) {
                 pouring = true;
             } else {

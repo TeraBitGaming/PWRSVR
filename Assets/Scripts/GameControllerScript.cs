@@ -14,8 +14,7 @@ public class GameControllerScript : MonoBehaviour
     public GameObject[] pipes;
     public GameObject waterPipe;
     private GameObject kettle;
-
-    public int energyDrained = 0;
+    public GameObject energyBar;
 
     void Start() {
         pipes = GameObject.FindGameObjectsWithTag("Pipe");
@@ -29,21 +28,12 @@ public class GameControllerScript : MonoBehaviour
         if (PlugCount == 3){
             light1.GetComponent<Light>().enabled = true;
             light2.GetComponent<Light>().enabled = true;
-            energyDrained += 2;
+            if (energyBar.transform.localScale.z > 0) {
+                energyBar.transform.localScale -= new Vector3(0, 0, 0.02f);
+            }
         } else if (PlugCount < 3){
             light1.GetComponent<Light>().enabled = false;
             light2.GetComponent<Light>().enabled = false;
-        }
-
-        int ctr = 0;
-        foreach (GameObject pipe in pipes) {
-            ctr += pipe.GetComponent<NewSnapper>().getSentSignal();
-        }
-        if (ctr == 27) {
-            Debug.Log("Pipes work!");
-            kettle.GetComponent<WaterJugScript>().heating = true;
-        } else {
-            kettle.GetComponent<WaterJugScript>().heating = false;
         }
 
         if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){
@@ -51,6 +41,24 @@ public class GameControllerScript : MonoBehaviour
             Debug.Log("Water-pipe works too!");
         } else {
             kettle.GetComponent<WaterJugScript>().full = false;
+        }
+    }
+
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "Kettle" || other.tag == "Water" || other.tag == "Steam"){
+            int ctr = 0;
+            foreach (GameObject pipe in pipes) {
+                ctr += pipe.GetComponent<NewSnapper>().getSentSignal();
+            }
+            if (ctr == 27) {
+                Debug.Log("Pipes work!");
+                kettle.GetComponent<WaterJugScript>().heating = true;
+                if (energyBar.transform.localScale.z > 0) {
+                energyBar.transform.localScale -= new Vector3(0, 0, 0.03f);
+                }
+            } else {
+                kettle.GetComponent<WaterJugScript>().heating = false;
+            }
         }
     }
 }

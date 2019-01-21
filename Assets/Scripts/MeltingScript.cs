@@ -16,13 +16,11 @@ public class MeltingScript : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other) {
-        Debug.Log("Stayed in the collider");
-        if (other.tag == "Kettle" || other.tag == "Water"){
+        if (other.tag == "Kettle" || other.tag == "Water" || other.tag == "Steam"){
             doPour = true;
         }
     }
     void OnTriggerExit(Collider other) {
-        Debug.Log("Left collider");
         doPour = false;
     }
 
