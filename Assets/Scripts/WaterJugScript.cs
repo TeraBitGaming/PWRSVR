@@ -18,6 +18,7 @@ public class WaterJugScript : MonoBehaviour
     public bool pouring;
     public GameObject steam;
     public GameObject stove;
+    public GameObject water;
 
     public bool getPouring() {
         return pouring;
@@ -49,6 +50,13 @@ public class WaterJugScript : MonoBehaviour
             } else {
                 pouring = false;
             }
+        }
+
+        if (pouring == true) {
+            water.SetActive(true);
+            water.GetComponent<ParticleSystem>().Play();
+        } else if (pouring == false) {
+            water.SetActive(false);
         }
     }
 }
