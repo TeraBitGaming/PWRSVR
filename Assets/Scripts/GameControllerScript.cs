@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GameControllerScript : MonoBehaviour
 {
-    public int PlugCount = 0;
-
+    private int PlugCount = 0;
     public GameObject light1;
     public GameObject light2;
     public GameObject plug1;
@@ -15,6 +14,8 @@ public class GameControllerScript : MonoBehaviour
     public GameObject waterPipe;
     private GameObject kettle;
     public GameObject energyBar;
+    public GameObject key;
+    public GameObject door;
 
     void Start() {
         pipes = GameObject.FindGameObjectsWithTag("Pipe");
@@ -29,7 +30,7 @@ public class GameControllerScript : MonoBehaviour
             light1.GetComponent<Light>().enabled = true;
             light2.GetComponent<Light>().enabled = true;
             if (energyBar.transform.localScale.z > 0) {
-                energyBar.transform.localScale -= new Vector3(0, 0, 0.02f);
+                energyBar.transform.localScale -= new Vector3(0, 0, 0.002f);
             }
         } else if (PlugCount < 3){
             light1.GetComponent<Light>().enabled = false;
@@ -41,6 +42,9 @@ public class GameControllerScript : MonoBehaviour
             Debug.Log("Water-pipe works too!");
         } else {
             kettle.GetComponent<WaterJugScript>().full = false;
+        }
+        if (key.GetComponent<NewSnapper>().getSentSignal() == 1){
+            door.GetComponent<HingeJoint>().useMotor= true;
         }
     }
 
@@ -54,7 +58,7 @@ public class GameControllerScript : MonoBehaviour
                 Debug.Log("Pipes work!");
                 kettle.GetComponent<WaterJugScript>().heating = true;
                 if (energyBar.transform.localScale.z > 0) {
-                energyBar.transform.localScale -= new Vector3(0, 0, 0.03f);
+                energyBar.transform.localScale -= new Vector3(0, 0, 0.003f);
                 }
             } else {
                 kettle.GetComponent<WaterJugScript>().heating = false;
