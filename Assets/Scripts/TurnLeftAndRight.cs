@@ -11,11 +11,20 @@ public class TurnLeftAndRight : MonoBehaviour
         vrController = GameObject.FindGameObjectWithTag("Player"); 
     }
 
-    public void ROTATE_RIGHT() {
-        vrController.transform.Rotate(new Vector3(0, 60, 0));
-    }
+    public void InputReceived(string message) {
+        if(message == "ROTATE_RIGHT") {
+            vrController.transform.Rotate(new Vector3(0, 60, 0));
+        }
+        if(message == "ROTATE_LEFT") {
+            vrController.transform.Rotate(new Vector3(0, -60, 0));
+        }
+    } 
 
-    public void ROTATE_LEFT() {
-        vrController.transform.Rotate(new Vector3(0, -60, 0));
-    }
+    // public void ROTATE_RIGHT() {
+    //     vrController.transform.Rotate(new Vector3(0, 60, 0));
+    // }
+
+    // public void ROTATE_LEFT() {
+    //     vrController.transform.Rotate(new Vector3(0, -60, 0));
+    // }
 }

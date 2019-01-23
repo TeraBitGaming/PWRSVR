@@ -9200,7 +9200,8 @@ MonoBehaviour:
   item: {fileID: 576830124}
   hovers:
   - {fileID: 576830125}
-  triggerColliders: []
+  triggerColliders:
+  - {fileID: 1260943576}
   leftHandIKAnchor: {fileID: 0}
   rightHandIKAnchor: {fileID: 0}
   leftHandIKPoseName: 
@@ -9218,8 +9219,8 @@ MonoBehaviour:
   heldPositionRightHand: {x: 0, y: 0, z: 0}
   heldRotationRightHand: {x: 0, y: 0, z: 0, w: 1}
   throwBoost: 10
-  followForce: 100
-  interactionDistance: 1
+  followForce: 1000
+  interactionDistance: 10
   limitAcceptedAction: 0
   acceptedActions: []
   hoverModes: 01000000
@@ -14562,8 +14563,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -10
-    max: 20
+    min: -5
+    max: 45
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -25979,7 +25980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1874633630}
-  requiredDistance: 0.005
+  requiredDistance: 0.01
   snapTag: Untagged
   useTags: 0
   damperValue: 100
@@ -39699,7 +39700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855653428}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.169, y: -0.756, z: -7.462}
+  m_LocalPosition: {x: 2.108, y: -0.771, z: -7.462}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1064401107}
@@ -46745,15 +46746,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 47bade69e1ac88049ac5aa990dd587bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 47bade69e1ac88049ac5aa990dd587bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 47bade69e1ac88049ac5aa990dd587bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 47bade69e1ac88049ac5aa990dd587bd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -47209,7 +47210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99209285009456574}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -0.479, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.175}
   m_Children: []
   m_Father: {fileID: 717913107984495709}
