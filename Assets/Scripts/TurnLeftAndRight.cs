@@ -12,10 +12,10 @@ public class TurnLeftAndRight : MonoBehaviour
     }
 
     public void InputReceived(string message) {
-        if(message == "ROTATE_RIGHT") {
+        if(message == "ROTATE-RIGHT") {
             vrController.transform.Rotate(new Vector3(0, 60, 0));
         }
-        if(message == "ROTATE_LEFT") {
+        if(message == "ROTATE-LEFT") {
             vrController.transform.Rotate(new Vector3(0, -60, 0));
         }
     } 

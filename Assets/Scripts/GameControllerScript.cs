@@ -40,7 +40,6 @@ public class GameControllerScript : MonoBehaviour
 
         if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){
             kettle.GetComponent<WaterJugScript>().full = true;
-            Debug.Log("Water-pipe works too!");
             water.SetActive(true);
             water.GetComponent<ParticleSystem>().Play();
         } else {
@@ -59,7 +58,6 @@ public class GameControllerScript : MonoBehaviour
                 ctr += pipe.GetComponent<NewSnapper>().getSentSignal();
             }
             if (ctr == 27) {
-                Debug.Log("Pipes work!");
                 kettle.GetComponent<WaterJugScript>().heating = true;
                 if (energyBar.transform.localScale.z > 0) {
                     energyBar.transform.localScale -= new Vector3(0, 0, 0.0015f);
