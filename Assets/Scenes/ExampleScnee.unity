@@ -2613,7 +2613,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251504421}
-  - component: {fileID: 251504422}
   m_Layer: 0
   m_Name: PipeHolder
   m_TagString: Untagged
@@ -2636,22 +2635,6 @@ Transform:
   m_Father: {fileID: 858702556}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &251504422
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251504420}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &254366087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9214,11 +9197,11 @@ MonoBehaviour:
   useBreakDistance: 0
   breakDistance: 0.1
   linkedLeftAndRightHeldPositions: 1
-  heldPosition: {x: 0, y: 0, z: 0}
-  heldRotation: {x: 0, y: 0, z: 0, w: 1}
+  heldPosition: {x: -0.066, y: 0.367, z: 0.854}
+  heldRotation: {x: -0.09709149, y: 0.70040935, z: -0.09709149, w: -0.70040935}
   heldPositionRightHand: {x: 0, y: 0, z: 0}
   heldRotationRightHand: {x: 0, y: 0, z: 0, w: 1}
-  throwBoost: 10
+  throwBoost: 5
   followForce: 1000
   interactionDistance: 10
   limitAcceptedAction: 0
@@ -14461,14 +14444,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576830123}
   m_LocalRotation: {x: -0.19297136, y: 0.68026626, z: 0.1929714, w: 0.68026614}
-  m_LocalPosition: {x: 0.071000114, y: -0.44500002, z: 0.000000009934108}
-  m_LocalScale: {x: 0.250001, y: 0.2500001, z: 1.0000017}
+  m_LocalPosition: {x: 0.071000114, y: -0.44500002, z: 0}
+  m_LocalScale: {x: 0.25000277, y: 0.25000042, z: 1}
   m_Children:
   - {fileID: 511363606}
   - {fileID: 1260943574}
   m_Father: {fileID: 251504421}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -31.674002, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.784, y: -90.00001, z: 0}
 --- !u!23 &576830125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14546,7 +14529,7 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576830123}
-  m_ConnectedBody: {fileID: 251504422}
+  m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0.86}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
@@ -15861,7 +15844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4852ee0db49c14847bb80a6571988f6d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4852ee0db49c14847bb80a6571988f6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20820,7 +20803,7 @@ MonoBehaviour:
   interactionDistance: 0.1
   limitAcceptedAction: 0
   acceptedActions: []
-  hoverModes: 00000000
+  hoverModes: 01000000
   defaultShaders:
   - {fileID: 0}
   hoverShaders:
@@ -29189,7 +29172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4852ee0db49c14847bb80a6571988f6d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4852ee0db49c14847bb80a6571988f6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30098,7 +30081,7 @@ MonoBehaviour:
   interactionDistance: 0.1
   limitAcceptedAction: 0
   acceptedActions: []
-  hoverModes: 00000000
+  hoverModes: 01000000
   defaultShaders:
   - {fileID: 0}
   hoverShaders:
@@ -45794,7 +45777,7 @@ MonoBehaviour:
   interactionDistance: 0.1
   limitAcceptedAction: 0
   acceptedActions: []
-  hoverModes: 00000000
+  hoverModes: 01000000
   defaultShaders:
   - {fileID: 0}
   hoverShaders:
