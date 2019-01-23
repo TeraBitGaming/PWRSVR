@@ -17,25 +17,37 @@ public class GameControllerScript : MonoBehaviour
     public GameObject key;
     public GameObject door;
     public GameObject water;
+    private int energyUsed;
+    private AudioSource auS;
+    public AudioClip energyOn;
+
+    public void recordEnergyUsed() {
+        PlayerPrefs.SetInt("usedEnergy", energyUsed);
+    }
 
     void Start() {
         pipes = GameObject.FindGameObjectsWithTag("Pipe");
         kettle = GameObject.FindGameObjectWithTag("Kettle");
+        auS = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         PlugCount = plug1.GetComponent<NewSnapper>().getSentSignal() + Plug2.GetComponent<NewSnapper>().getSentSignal() + Plug3.GetComponent<NewSnapper>().getSentSignal();
         if (PlugCount == 3){
             light1.GetComponent<Light>().enabled = true;
             light2.GetComponent<Light>().enabled = true;
             if (energyBar.transform.localScale.z > 0) {
                 energyBar.transform.localScale -= new Vector3(0, 0, 0.001f);
+                energyUsed += 1;
             }
         } else if (PlugCount < 3){
             light1.GetComponent<Light>().enabled = false;
             light2.GetComponent<Light>().enabled = false;
+        }
+
+        if (PlugCount == 3 && energyUsed == 1) {
+            auS.PlayOneShot(energyOn);
         }
 
         if(waterPipe.GetComponent<NewSnapper>().getSentSignal() == 1){
@@ -61,6 +73,7 @@ public class GameControllerScript : MonoBehaviour
                 kettle.GetComponent<WaterJugScript>().heating = true;
                 if (energyBar.transform.localScale.z > 0) {
                     energyBar.transform.localScale -= new Vector3(0, 0, 0.0015f);
+                    energyUsed += 1;
                 }
             } else {
                 kettle.GetComponent<WaterJugScript>().heating = false;

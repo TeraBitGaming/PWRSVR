@@ -19,9 +19,16 @@ public class WaterJugScript : MonoBehaviour
     public GameObject steam;
     public GameObject stove;
     public GameObject water;
+    public AudioClip pouringSound;
+
+    private AudioSource auS;
 
     public bool getPouring() {
         return pouring;
+    }
+
+    void Start() {
+        auS = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,11 +40,12 @@ public class WaterJugScript : MonoBehaviour
             heat += 1;
         }
         
-        if (heat == 100) {
+        if (heat == 100 & filled == true) {
             Debug.Log("DING!");
             hot = true;
             steam.SetActive(true);
             steam.GetComponent<ParticleSystem>().Play();
+            auS.Play();
         }
 
         if (stove.GetComponent<PourChecker>().isFull == true && full == true) {
@@ -55,6 +63,7 @@ public class WaterJugScript : MonoBehaviour
         if (pouring == true) {
             water.SetActive(true);
             water.GetComponent<ParticleSystem>().Play();
+            auS.PlayOneShot(pouringSound);
         } else if (pouring == false) {
             water.SetActive(false);
         }

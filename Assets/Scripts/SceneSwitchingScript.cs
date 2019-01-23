@@ -11,12 +11,17 @@ public class SceneSwitchingScript : MonoBehaviour{
         shineBrighter = true;
     }
 
+    public void startScene() {
+        SceneManager.LoadScene("ExampleScnee");
+    }
+
     void Start() {
         ballLight = GameObject.FindGameObjectWithTag("Sphere").GetComponent<Light>();
     }
 
     void Update() {
         if (shineBrighter == true) {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControllerScript>().recordEnergyUsed();
             if (ballLight.intensity < 20) {
                 ballLight.intensity += 0.1f;
             }
